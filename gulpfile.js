@@ -1,0 +1,56 @@
+var gulp        = require('gulp');
+var concat      = require('gulp-concat');
+var uglify      = require('gulp-uglify');
+var imagemin    = require('gulp-imagemin');
+var stylus      = require('gulp-stylus');
+var minifycss   = require('gulp-minify-css');
+var browserSync = require('browser-sync');
+var server      = require('./app');
+var notify      = require('gulp-notify');
+var node;
+
+gulp.task('styles', function() {
+    gulp.src('./assets/css/*.styl')
+        .pipe(stylus())
+        .pipe(concat('main.css'))
+        .pipe(minifycss())
+        .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('images', function() {
+  return gulp.src('./assets/images/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('./build/imgs'))
+});
+
+gulp.task('scripts', function() {
+    gulp.src('./assets/javascript/*.js')
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./build/js'))
+});
+
+gulp.task('default', ['build', 'server', 'sync']);
+gulp.task('build', ['scripts', 'styles', 'images']);
+
+gulp.task('server', function() {
+  if (node) node.kill()
+  console.log(server);
+  node = server;
+  node.start();
+});
+
+gulp.task('watch', ['build'], function() {
+  gulp.watch(['./assets/javascript/**/*.js'], ['scripts']);
+  gulp.watch(['./assets/css/**/*.styl'], ['styles']);
+});
+
+gulp.task('sync', ['watch'], function() {
+  browserSync.init(['./build/js/*.js', './build/css/*.css'], {
+    proxy: 'localhost:2000'
+  });
+});
+
+process.on('exit', function() {
+    if (node) node.kill();
+});

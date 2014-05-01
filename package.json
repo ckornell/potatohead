@@ -1,0 +1,26 @@
+{
+  "name": "potato-head",
+  "version": "0.0.0",
+  "description": "template viewer",
+  "main": "app.js",
+  "scripts": {
+    "test": "test app"
+  },
+  "author": "christopher m. kornell",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^0.9.16"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-imagemin": "^0.5.0",
+    "gulp-stylus": "^1.0.0",
+    "gulp-minify-css": "^0.3.4",
+    "browser-sync": "^0.8.2",
+    "gulp-notify": "^1.2.5",
+    "express": "^4.1.1",
+    "express3-handlebars": "^0.5.0"
+  }
+}
