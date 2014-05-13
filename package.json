@@ -9,7 +9,8 @@
   "author": "christopher m. kornell",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "^0.9.16"
+    "socket.io": "^0.9.16",
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "gulp": "^3.6.2",
@@ -21,6 +22,8 @@
     "browser-sync": "^0.8.2",
     "gulp-notify": "^1.2.5",
     "express": "^4.1.1",
-    "express3-handlebars": "^0.5.0"
+    "express3-handlebars": "^0.5.0",
+    "hbs": "^2.6.0",
+    "nconf": "^0.6.9"
   }
 }

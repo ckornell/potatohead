@@ -1,0 +1,57 @@
+{
+    "header": [
+        "_nav.html",
+        "basic_nav_search.html",
+        "basic_search_nav.html",
+        "checkout.html",
+        "header1.html",
+        "header2.html",
+        "header3.html",
+        "header4.html",
+        "header5.html",
+        "header6.html",
+        "header8.html",
+        "slide_menu.html"
+    ],
+    "footer": [
+        "_contact.html",
+        "_copyright.html",
+        "_full_site_link.html",
+        "_links.html",
+        "_logo.html",
+        "_nav.html",
+        "_signup.html",
+        "_social.html",
+        "checkout.html",
+        "footer1.html",
+        "footer10.html",
+        "footer11.html",
+        "footer12.html",
+        "footer2.html",
+        "footer3.html",
+        "footer4.html",
+        "footer5.html",
+        "footer6.html",
+        "footer7.html",
+        "footer8.html",
+        "footer9.html"
+    ],
+    "categories": [
+        "categories1.html",
+        "categories2.html",
+        "categories3.html",
+        "categories4.html"
+    ],
+    "layouts": [
+        "_analytic_scripts.html",
+        "_head.html",
+        "_scripts.html",
+        "_slider_columns.html",
+        "_storc.scripts.html",
+        "checkout.html",
+        "default.html",
+        "filter_menu.html",
+        "head",
+        "slide_menu.html"
+    ]
+}

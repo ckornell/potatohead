@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "typography": {
+      "line-height": {
+        "label": "line height",
+        "stylus": "$base-line-height",
+        "control": "text",
+        "name": "line-height",
+        "class": "line-height"
+      },
+      "font-size": {
+        "label": "font size",
+        "stylus": "$base-font-size",
+        "control": "text",
+        "name": "font-size",
+        "class": "font-size"
+      },
+      "font-family": {
+        "label": "font family",
+        "stylus": "$font-family",
+        "class": "font-family", 
+        "control": "select",
+        "name": "font-family",
+        "options": ["Arial", "Times New Roman", "Courier New", "Avant Garde"]
+      }
+    }
+  }
+}

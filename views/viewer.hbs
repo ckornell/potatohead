@@ -1,1 +1,51 @@
-<h1>Example App: Home {{stuff}}</h1>
+<div class="menu-container">
+  <ul class="menu" id="header-sections-menu">
+    {{#each nav}}
+    <li id="{{@key}}">
+      <a>{{@key}}</a>
+      <ul class="submenu">
+        {{#each this}}
+        <li>
+          <a data-section='{{@key}}' data-value='{{this}}'>{{this}}</a>
+        </li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+
+  <!-- <div class="qrcode">
+    <img src="{{qrcode}}"/>
+  </div>
+  <div class="export">
+    <a href="/potato/export">Export</a>
+  </div> -->
+
+</div>
+<div id="preview">
+  <iframe id="preview_iframe" src="{{config.server}}"></iframe>
+</div>
+<div class="potato tabbar">
+  <a data-type='stylus' class='active'>Web</a>
+</div>
+<div class='potato tab' data-type='stylus'>
+  <div class="variables-container">
+    {{#each variables.sections}}
+    <form class="section">
+      <ul class="variables">
+          <h2>{{@key}}</h2>
+          <ul>
+            {{#each this}}
+            <li>
+              {{showPotatoOption this}}
+            </li>
+            {{/each}}
+          </ul>
+      </ul>
+      <div>
+        <button class="submit-change" data-section="{{@key}}">Submit</button>
+      </div>
+    </form>
+  </div>
+  {{/each}}
+</div>

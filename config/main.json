@@ -1,0 +1,6 @@
+{
+  "server": "http://localhost:3008",
+  "requireStartup": "true",
+  "adapter": "frontend1",
+  "location": "/Users/ckornell/Projects/frontend-templates"
+}
