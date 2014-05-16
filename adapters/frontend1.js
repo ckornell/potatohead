@@ -17,11 +17,10 @@ exports.buildNavigation = function buildNavigation(callback) {
 
    var viewPaths = ['/node_modules/bb-mirage/views/html/header',
    '/node_modules/bb-mirage/views/html/footer',
-   '/node_modules/bb-mirage/views/html/categories',
-   '/node_modules/bb-mirage/views/html/layouts'
+   '/node_modules/bb-mirage/views/html/categories'
    ];
 
-
+   exports.server = server;
 
    var collectedViews = {};
    _.each(viewPaths, function(item) {
@@ -54,7 +53,31 @@ exports.buildNavigation = function buildNavigation(callback) {
    }
 }
 
+var restartServer = function restartServer() {
+  console.log('restart called');
+  if(server) {
+    console.log('into server');
+    var id = require('../app').id;
+    app.io.sockets.socket(id).emit('reloading');
+    server.kill();
+    server = fork('./app.js', [
+      '-w', '0',
+      '--url', 'https://leviapi.bbhosted.com',
+      '-p', '3008'
+      ], { cwd: config.location, silent: true });
+
+    server.stdout.on('data', function(data) {
+      if(/listening on port/g.test(data.toString())) {
+        app.io.sockets.socket(id).emit('refreshFrame');
+      }
+    });
+  }
+}
+
+exports.restartServer = restartServer;
+
 exports.rewriteStylus = function rewriteStylus(data) {
+
   nconf.file({ file: config.location + '/assets/html/stylesheets/variables.json' });
   _.each(data.form, function(value, key) {
     nconf.set(key, value);
@@ -62,11 +85,8 @@ exports.rewriteStylus = function rewriteStylus(data) {
 
   nconf.save(function (err) {
     fs.readFile(config.location + '/assets/html/stylesheets/variables.json', function (err, data) {
-      console.dir(JSON.parse(data.toString()));
-      id = require('../app').id;
-      console.log('socket id is supposed to be', id);
+      var id = require('../app').id;
       app.io.sockets.socket(id).emit('refreshFrame');
     });
   });
-
 }

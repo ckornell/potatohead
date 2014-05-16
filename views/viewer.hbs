@@ -14,19 +14,9 @@
     {{/each}}
   </ul>
 
-  <!-- <div class="qrcode">
-    <img src="{{qrcode}}"/>
-  </div>
-  <div class="export">
-    <a href="/potato/export">Export</a>
-  </div> -->
-
 </div>
 <div id="preview">
   <iframe id="preview_iframe" src="{{config.server}}"></iframe>
-</div>
-<div class="potato tabbar">
-  <a data-type='stylus' class='active'>Web</a>
 </div>
 <div class='potato tab' data-type='stylus'>
   <div class="variables-container">
@@ -46,6 +36,10 @@
         <button class="submit-change" data-section="{{@key}}">Submit</button>
       </div>
     </form>
-  </div>
   {{/each}}
+  <form action="/images" method="POST" enctype="multipart/form-data">
+    {{#each variables.images}}
+      {{> _file this}}
+    {{/each}}
+  </div>
 </div>

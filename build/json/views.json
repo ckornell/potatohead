@@ -41,17 +41,5 @@
         "categories2.html",
         "categories3.html",
         "categories4.html"
-    ],
-    "layouts": [
-        "_analytic_scripts.html",
-        "_head.html",
-        "_scripts.html",
-        "_slider_columns.html",
-        "_storc.scripts.html",
-        "checkout.html",
-        "default.html",
-        "filter_menu.html",
-        "head",
-        "slide_menu.html"
     ]
 }

@@ -1,5 +1,8 @@
-<select name="{{this.stylus}}" id="">
-  {{#each this.options}}
-    <option value="{{this}}">{{this}}</option>
-  {{/each}}
-</select>
+<div class="select-control">
+  <label for="{{this.name}}">{{this.name}}</label>
+  <select name="{{this.stylus}}" id="{{this.name}}">
+    {{#each this.options}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
+</div>

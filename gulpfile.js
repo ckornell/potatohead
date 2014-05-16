@@ -34,7 +34,7 @@ gulp.task('default', ['build', 'server', 'sync']);
 gulp.task('build', ['scripts', 'styles', 'images']);
 
 gulp.task('server', function() {
-  //if (node) node.kill()
+  if(server.server) server.server.kill();
   node = server;
   node.build();
 });
@@ -51,5 +51,7 @@ gulp.task('sync', ['watch'], function() {
 });
 
 process.on('exit', function() {
-    if (node) node.kill();
+  console.log('called');
+  var server = require('./app');
+  if(server) server.server.kill();
 });

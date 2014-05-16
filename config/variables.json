@@ -23,6 +23,41 @@
         "name": "font-family",
         "options": ["Arial", "Times New Roman", "Courier New", "Avant Garde"]
       }
+    },
+    "base colors": {
+      "primary": {
+        "label": "primary color",
+        "stylus": "$primary-color",
+        "class": "primary-color",
+        "control": "text-field-color",
+        "name": "primary-color"
+      },
+      "secondary": {
+        "label": "secondary color",
+        "stylus": "$secondary-color",
+        "class": "secondary-color",
+        "control": "text-field-color",
+        "name": "secondary-color"
+      },
+      "tertiary": {
+        "label": "tertiary color",
+        "stylus": "$tertiary-color",
+        "class": "tertiary-color",
+        "control": "text-field-color",
+        "name": "tertiary-color"
+      }
+    }
+  },
+  "images": {
+    "logo": {
+      "name": "logo",
+      "control": "file",
+      "label" : "brand logo"
+    },
+    "menu": {
+      "name": "menu-icon",
+      "control": "file",
+      "label": "menu icon"
     }
   }
 }

@@ -12,10 +12,6 @@
     $iframe.attr('src', src);
   }
 
-  function randomCacheBuster(min, max) {
-    return Math.ceil(Math.random() * max * min);
-  }
-
   function formatSection(section, partial) {
     var format = 'http://localhost:3008?layout=default';
     console.log(section, partial);
