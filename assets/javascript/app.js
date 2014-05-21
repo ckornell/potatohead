@@ -1,4 +1,4 @@
-// Included first in concat
+// Included first in build concat
 function randomCacheBuster(min, max) {
   return Math.ceil(Math.random() * max * min);
 }

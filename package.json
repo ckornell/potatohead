@@ -25,6 +25,8 @@
     "express3-handlebars": "^0.5.0",
     "hbs": "^2.6.0",
     "nconf": "^0.6.9",
-    "connect-busboy": "0.0.1"
+    "connect-busboy": "0.0.1",
+    "express-redirect": "^1.1.0",
+    "multer": "git+https://github.com/cmkornell/multer"
   }
 }

@@ -6,14 +6,16 @@
         "stylus": "$base-line-height",
         "control": "text",
         "name": "line-height",
-        "class": "line-height"
+        "class": "small-field",
+        "hint": "(example: 2.7rem)"
       },
       "font-size": {
         "label": "font size",
         "stylus": "$base-font-size",
         "control": "text",
-        "name": "font-size",
-        "class": "font-size"
+        "name": "font-size", 
+        "class": "small-field",
+        "hint": "(example: 1rem)"
       },
       "font-family": {
         "label": "font family",
@@ -46,6 +48,72 @@
         "control": "text-field-color",
         "name": "tertiary-color"
       }
+    },
+    "font colors": {
+      "light": {
+        "label": "light font color",
+        "control": "text-field-color",
+        "stylus": "$light-font-color"
+      },
+      "dark": {
+        "label": "dark font color",
+        "control": "text-field-color",
+        "stylus": "$dark-font-color"
+      },
+      "link": {
+       "label": "link font color",
+       "control": "text-field-color",
+       "stylus": "$link-color"
+      },
+      "font": {
+       "label": "regular font color",
+       "control": "text-field-color",
+       "stylus": "$font-color"
+      }
+    },
+    "backgrounds": {
+      "color": {
+        "label": "background color",
+        "control": "text-field-color",
+        "stylus": "$background-color"
+      },
+      "header background": {
+        "label": "header background color",
+        "control": "text-field-color",
+        "stylus": "$header-background"
+      },
+      "footer background": {
+        "label": "footer background color",
+        "control": "text-field-color",
+        "stylus": "$footer-background"
+      }
+    },
+    "button colors": {
+      "solid color": {
+        "label": "solid color",
+        "control": "text-field-color",
+        "stylus": "$button-color"
+      },
+      "disabled color": {
+        "label": "disabled color",
+        "control": "text-field-color",
+        "stylus": "$button-disabled-color"
+      },
+      "primary color": {
+        "label": "primary color",
+        "control": "text-field-color",
+        "stylus": "$button-primary-color"
+      },
+      "gradient start": {
+        "label": "button gradient start",
+        "control": "text-field-color",
+        "stylus": "$button-gradient-start"
+      },
+      "gradient end": {
+        "label": "primary color",
+        "control": "text-field-color",
+        "stylus": "$button-gradient-end"
+      }
     }
   },
   "images": {
@@ -58,6 +126,16 @@
       "name": "menu-icon",
       "control": "file",
       "label": "menu icon"
+    },
+    "small logo": {
+      "name": "small-logo",
+      "control": "file", 
+      "label": "footer (smaller) logo"
+    },
+    "cart icon": {
+      "name": "cart-icon",
+      "control": "file",
+      "label": "cart icon"
     }
   }
 }

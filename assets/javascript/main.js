@@ -1,12 +1,21 @@
 (function(){
   $('.menu > li a').on('click', function(){
-    $(this).parent().find('> .submenu').toggle();
+    var $this = $(this);
+    $this.parent().find('> .submenu').toggle();
+    $this.toggleClass('open');
   });
 
   $('.minicolors').minicolors({
     control: 'wheel',
-    theme: 'default'
+    theme: 'default',
+    defaultValue: '#fff'
   });
-  
-  
-})();
+
+  $('.section-btn-header').on('click', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $this.next('.variables').toggle();
+    $this.toggleClass('open');
+  });
+
+}());

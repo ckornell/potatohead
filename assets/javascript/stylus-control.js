@@ -10,16 +10,27 @@
   });
 
   socket.on('refreshFrame', function() {
+
+    $('#loader').show();
+
     var $iframe = $('#preview_iframe');
     var src     = $iframe.attr('src'); 
     var rdm     = randomCacheBuster(2000, 1000);
-    console.log(src);
+    
     if(/\?layout/g.test(src)) {
       $iframe.attr('src', src + "&refresh=" + rdm);
     } else {
       $iframe.attr('src', src + "?refresh=" + rdm);
     }
     
-    console.warn('reloading');
   });
-})();
+
+  socket.on('reloading', function() {
+    $('#loader').show();
+  });
+
+  socket.on('refresh', function() {
+    window.location.reload(true);
+  });
+
+}());

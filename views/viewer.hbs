@@ -13,17 +13,19 @@
     </li>
     {{/each}}
   </ul>
-
+  <div id="qrcode"></div>
 </div>
 <div id="preview">
+  <div id="loader" class="hide"><img src="imgs/loader.gif" alt="loader"></div>
   <iframe id="preview_iframe" src="{{config.server}}"></iframe>
 </div>
 <div class='potato tab' data-type='stylus'>
   <div class="variables-container">
-    {{#each variables.sections}}
-    <form class="section">
-      <ul class="variables">
-          <h2>{{@key}}</h2>
+    <div class="accordions">
+      {{#each variables.sections}}
+      <form class="section">
+        <h2 class="section-btn-header">{{@key}}</h2>
+        <section class="variables">
           <ul>
             {{#each this}}
             <li>
@@ -31,15 +33,29 @@
             </li>
             {{/each}}
           </ul>
-      </ul>
-      <div>
-        <button class="submit-change" data-section="{{@key}}">Submit</button>
-      </div>
-    </form>
-  {{/each}}
-  <form action="/images" method="POST" enctype="multipart/form-data">
-    {{#each variables.images}}
-      {{> _file this}}
+          <div class="">
+            <button class="submit-change" data-section="{{@key}}">update</button>
+          </div>
+        </section>
+      </form>
     {{/each}}
+    <form class="section" action="/images" method="POST" enctype="multipart/form-data">
+      <h2 class="section-btn-header">images</h2>
+      <section class="variables">
+        {{#each variables.images}}
+          {{> _file this}}
+        {{/each}}
+        <button type="submit">update</button>
+      </section>
+      </form>
+    </div>
+    <form action="/reset" method="POST">
+        <button type="submit" class="reset warning">reset variables</button>
+    </form>
+
+    <form action="/remove" method="POST">
+      <button type="submit" class="reset warning">reset images</button>
+    </form>
   </div>
 </div>
+
