@@ -22,7 +22,7 @@ Template View Machine
 * Potatohead must be configured with the IP or DNS so it can build links for external devices to visit
 
 <h2> Startup </h2>
-<em> note: Potatohead's adapters will spawn and automate the Frontend is consumes </em>
+<em> note: Potatohead's adapters will spawn and automate the Frontend it consumes </em>
 * <b> Production </b> To start Potatohead <code>cd</code> into main directory and run <code> gulp server </code>
 * <b> Development </b> When developing in Potatohead use <code> gulp </code> to run all dev tools
 
