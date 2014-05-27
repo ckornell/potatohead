@@ -23,7 +23,7 @@ Template View Machine
 
 <h2> Startup </h2>
 <em> note: Potatohead's adapters will spawn and automate the Frontend is consumes </em>
-* <b> Production </b> To start Potatohead <code>CD</code> into main directory and run <code> gulp server </code>
+* <b> Production </b> To start Potatohead <code>cd</code> into main directory and run <code> gulp server </code>
 * <b> Development </b> When developing in Potatohead use <code> gulp </code> to run all dev tools
 
 <h2> Writing a new adapter </h2>
