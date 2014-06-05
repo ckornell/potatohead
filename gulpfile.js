@@ -30,7 +30,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('./build/js'))
 });
 
-gulp.task('default', ['build', 'server', 'sync']);
+gulp.task('default', ['build', 'server']);
 gulp.task('build', ['scripts', 'styles', 'images']);
 
 gulp.task('server', function() {

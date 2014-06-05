@@ -114,7 +114,6 @@ exports.deleteImages = function deleteImages(res) {
  var filesToRemove = fs.readdirSync(config.location+directory);
  filesToRemove.forEach(function(item, index){
     fs.unlink(config.location + directory + '/' + item, function(){
-      console.log('seeya');
       return restartServer(res);
     })
  })
