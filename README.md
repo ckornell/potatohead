@@ -12,7 +12,7 @@ Template View Machine
 
 <h2> Requirements </h2>
 * Potatohead requires to be in the same directory as the frontend server 
-* Frontend server must have middleware (lib/template-queries) that facilitates communciation between the two apps
+* Frontend server must have middleware (lib/template-queries) that facilitates communication between the two apps
 * Frontend server must use the aforementioned middleware in server.js (frontend 1)
 
 
