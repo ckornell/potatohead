@@ -51,7 +51,6 @@ gulp.task('sync', ['watch'], function() {
 });
 
 process.on('exit', function() {
-  console.log('called');
   var server = require('./app');
   if(server) server.server.kill();
 });
