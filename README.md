@@ -19,7 +19,8 @@ Template View Machine
 <h2> Server configuration </h2>
 * Potatohead runs on port 2000 (IP/DNS should be configured to this port)
 * Modified frontend runs on port 3008
-* Potatohead must be configured with the IP or DNS so it can build links for external devices to visit
+* Potatohead can take a command line argument to specify the frontend server address
+<code> gulp -s http://localhost:3008</code>
 
 <h2> Startup </h2>
 <em> note: Potatohead's adapters will spawn and automate the Frontend it consumes </em>
