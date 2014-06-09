@@ -1,6 +1,7 @@
 (function(){
   var qrcode;
   var $loader = $('#loader');
+  var $host = $loader.data('host');
 
   $('.submenu > li a').on('click', function(){
     var link = $(this);
@@ -17,7 +18,7 @@
   }
 
   function formatSection(section, partial) {
-    var format = 'http://localhost:3008?layout=default';
+    var format = $host + '?layout=default';
     switch(section) {
       case 'header': 
         format += '&views:header=header/';
@@ -26,7 +27,7 @@
         format += '&views:footer=footer/';
         break;
       case 'layouts':
-        format = 'http://localhost:3008?layout=';
+        format = $host + '?layout=';
         break;
       case 'categories':
         format += '&views:categories=categories/';
@@ -37,7 +38,7 @@
     }
 
     if(partial === 'slide_menu') {
-      format = 'http://localhost:3008?layout=slide_menu&views:header=header/';
+      format = $host + '?layout=slide_menu&views:header=header/';
     }
     
     var url = format + partial + "&refresh="+ randomCacheBuster(100, 300);
@@ -47,7 +48,7 @@
   }
 
   qrcode = new QRCode("qrcode", {
-    text: "http://localhost:3008?layout=default",
+    text: $host + '?layout=default',
     width: 128,
     height: 128,
     colorDark : "#000000",

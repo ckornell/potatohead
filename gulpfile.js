@@ -9,6 +9,14 @@ var server      = require('./app');
 var notify      = require('gulp-notify');
 var node;
 
+var opts  = require('nomnom')
+  .option('server', {
+    abbr: 's',
+    help: 'Required input for server configuration',
+    default: 'http://localhost:3008',
+    type: 'string'
+  }).parse();
+
 gulp.task('styles', function() {
     gulp.src('./assets/css/*.styl')
         .pipe(stylus())
@@ -36,7 +44,7 @@ gulp.task('build', ['scripts', 'styles', 'images']);
 gulp.task('server', function() {
   if(server.server) server.server.kill();
   node = server;
-  node.build();
+  node.build(opts);
 });
 
 gulp.task('watch', ['build'], function() {

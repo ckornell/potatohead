@@ -12,9 +12,10 @@ var navigation   = require('./build/json/views.json');
 var variables    = require('./config/variables.json');
 var helpers      = require('./helpers.js');
 var multer       = require('multer');
+var nconf        = require('nconf');
 
 exports.io = io;
-var start = function start() {
+var start = function start(opts) {
 
   var nodeapp = server.listen(2000, function() {
     console.log('Potato Head is listening on port %d', nodeapp.address().port);
@@ -28,26 +29,11 @@ var start = function start() {
 
   hbs.registerPartials('./views/partials');
 
-  // app.use(multer({
-  //   dest: config.location + '/public/html/images/sprites/global',
-  //   rename: function(fieldname, filename) {
-  //     if(fieldname === 'logo') {
-  //       return 'logo';
-  //     } else if('icn-menu') {
-  //       return 'icn-menu';
-  //     }
-
-  //     return filename.replace(/\W+/g, '-') + '-' + Date.now();
-  //   },
-  //   onFileUploadComplete: function(file, req, res, next) {
-  //     adapter.restartServer(res);
-  //   }
-  // }));
-
   app.get('/', function (req, res) {
     res.render('viewer', {
       nav: navigation, 
-      config: config, 
+      config: config,
+      server: opts.server, 
       variables: variables,
       loading: false
     });
@@ -102,9 +88,9 @@ var start = function start() {
   });
 }
 
-exports.build = function build(callback) {
+exports.build = function build(opts) {
   adapter.buildNavigation(function(){
-    start();
+    start(opts);
   });
 }
 
