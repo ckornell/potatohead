@@ -1,5 +1,6 @@
 (function(){
-  var socket = io.connect('http://localhost:2000');
+  var host    = window.location.href;
+  var socket  = io.connect(host);
  
   $('.submit-change').on('click', function(e){
     e.preventDefault();

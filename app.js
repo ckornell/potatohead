@@ -17,7 +17,7 @@ var nconf        = require('nconf');
 exports.io = io;
 var start = function start(opts) {
 
-  var nodeapp = server.listen(2000, function() {
+  var nodeapp = server.listen(3009, function() {
     console.log('Potato Head is listening on port %d', nodeapp.address().port);
   });
 

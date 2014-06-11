@@ -52,6 +52,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['./assets/css/*.styl'], ['styles']);
 });
 
+// Dev only -- not in current tasks
 gulp.task('sync', ['watch'], function() {
   browserSync.init(['./build/js/*.js', './build/css/*.css'], {
     proxy: 'localhost:2000'

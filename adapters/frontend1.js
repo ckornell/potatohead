@@ -62,9 +62,7 @@ exports.buildNavigation = function buildNavigation(callback) {
 }
 
 var restartServer = function restartServer(res) {
-  console.log('restart called');
   if(server) {
-    console.log('into server');
     var id = require('../app').id;
     app.io.sockets.socket(id).emit('reloading');
     server.kill();
@@ -76,7 +74,6 @@ var restartServer = function restartServer(res) {
 
     server.stdout.on('data', function(data) {
       if(/listening on port/g.test(data.toString())) {
-        console.log('refresh', id);
         res.redirect('back');
         app.io.sockets.socket(id).emit('refresh');
       }
