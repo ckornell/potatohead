@@ -14,7 +14,10 @@ exports.buildNavigation = function buildNavigation(callback) {
     '-w', '0',
     '--url', 'https://leviapi.bbhosted.com',
     '-p', '3008'
-    ], { cwd: config.location });
+    ], { cwd: config.location, env: _.merge({}, process.env, {NODE_ENV: 'development'}) });
+
+   //_process.env.NODE_ENV = 'PRODUCTION';
+   //_.merge({}, process.env, {NODE_ENV: 'production'})
 
    var viewPaths = ['/node_modules/bb-mirage/views/html/header',
    '/node_modules/bb-mirage/views/html/footer',
@@ -70,7 +73,7 @@ var restartServer = function restartServer(res) {
       '-w', '0',
       '--url', 'https://leviapi.bbhosted.com',
       '-p', '3008'
-      ], { cwd: config.location, silent: true});
+      ], { cwd: config.location, env: _.merge({}, process.env, {NODE_ENV: 'development'}), silent: true});
 
     server.stdout.on('data', function(data) {
       if(/listening on port/g.test(data.toString())) {
