@@ -16,9 +16,6 @@ exports.buildNavigation = function buildNavigation(callback) {
     '-p', '3008'
     ], { cwd: config.location, env: _.merge({}, process.env, {NODE_ENV: 'development'}) });
 
-   //_process.env.NODE_ENV = 'PRODUCTION';
-   //_.merge({}, process.env, {NODE_ENV: 'production'})
-
    var viewPaths = ['/node_modules/bb-mirage/views/html/header',
    '/node_modules/bb-mirage/views/html/footer',
    '/node_modules/bb-mirage/views/html/categories',
